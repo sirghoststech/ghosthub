@@ -5,7 +5,7 @@ if table.find(AuthorizationList,game.Players.LocalPlayer.UserId) then
 else
 	Authorized = false
 end
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source' or )))()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source') or game:HttpGet('https://raw.githubusercontent.com/sirghoststech/ghosthub/main/backuporionlib'))()
 OrionLib:MakeNotification({
 	Name = "Ghost Hub Loader",
 	Content = "Checking authorization...",
@@ -105,12 +105,12 @@ if Authorized then
 		end    
 	})
 	Welcome:AddParagraph("Welcome to Ghost Hub, by CyberShark LLC","Thank you for using our script hub. You can either use a universal-script hub, or one for the current game.")
-     local Game = Window:MakeTab({
+	local Game = Window:MakeTab({
 		Name = "Game",
 		Icon = "rbxassetid://6034837803",
 		PremiumOnly = false
 	})
-    local CurrGame = Game:AddSection("Current Game")
+	local CurrGame = Game:AddSection("Current Game")
 else
 	OrionLib:MakeNotification({
 		Name = "Ghost Hub Loader",
@@ -119,4 +119,3 @@ else
 		Time = 4.5
 	})
 end
-OrionLib:Init()
